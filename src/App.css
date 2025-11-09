@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Dashboard Grid */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Sensor Card */
+.sensor-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.sensor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.sensor-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sensor-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.sensor-info h3 {
+  font-size: 1.3rem;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.sensor-info p {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+/* Value Display */
+.sensor-value {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.value {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.unit {
+  font-size: 1.2rem;
+  color: #718096;
+  margin-left: 5px;
+}
+
+/* Status Indicator */
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.status.optimal {
+  background: #c6f6d5;
+  color: #276749;
+}
+
+.status.warning {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.status.attention {
+  background: #feebc8;
+  color: #d69e2e;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-top: 15px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: between;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* Color Themes for Different Sensors */
+.temperature .sensor-icon { background: #fed7d7; color: #c53030; }
+.temperature .progress-fill { background: linear-gradient(90deg, #fed7d7, #c53030); }
+
+.moisture .sensor-icon { background: #bee3f8; color: #3182ce; }
+.moisture .progress-fill { background: linear-gradient(90deg, #bee3f8, #3182ce); }
+
+.ph .sensor-icon { background: #c6f6d5; color: #38a169; }
+.ph .progress-fill { background: linear-gradient(90deg, #c6f6d5, #38a169); }
+
+.gas .sensor-icon { background: #e9d8fd; color: #6b46c1; }
+.gas .progress-fill { background: linear-gradient(90deg, #e9d8fd, #6b46c1); }
+
+.ec .sensor-icon { background: #fed7d7; color: #dd6b20; }
+.ec .progress-fill { background: linear-gradient(90deg, #fed7d7, #dd6b20); }
+
+.maturity .sensor-icon { background: #9ae6b4; color: #25855a; }
+.maturity .progress-fill { background: linear-gradient(90deg, #9ae6b4, #25855a); }
+
+/* Last Update */
+.last-update {
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .value {
+    font-size: 2.5rem;
+  }
+}
